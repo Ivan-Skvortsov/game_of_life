@@ -1,0 +1,21 @@
+body {
+    padding: 20px;
+}
+
+table {
+    padding-bottom: 10px;
+}
+
+td {
+    border: 1px solid lightgray;
+    width: 10px;
+    height: 10px;
+}
+
+td.dead {
+    background-color: transparent;
+}
+
+td.alive {
+    background-color: gray;
+}
