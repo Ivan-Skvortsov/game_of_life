@@ -16,7 +16,7 @@ app = FastAPI()
 )
 def create_game():
     """Создаёт новую игру с рандомно размещенными клетками."""
-    return {"board": create_new_game()}
+    return GameOfLifeResponse(board=create_new_game())
 
 
 @app.post(
@@ -27,7 +27,7 @@ def create_game():
 )
 def update_current_game(current_game: GameOfLifeRequest):
     """Проверяет состояние клеток на поле и возвращает обновленную игру."""
-    return {"board": update_game(current_game.board)}
+    return GameOfLifeResponse(board=update_game(current_game.board))
 
 
 app.mount("/", StaticFiles(directory="src/staticfiles", html=True))
